@@ -1,0 +1,13 @@
+Hi Developer,
+
+this folder is a netbeans project folder, so if you are planning 
+to edit the project just use netbeans IDE for editing.
+open this folder from netbeans, it will auto detect the config.
+Netbeans version 7.4 (updated developer version) was used to update the project.
+the previous build will be in older versions of netbeans.
+
+the fat jar (the single packed jar) is build using the script in the
+build.xml. you can use it in other projects also.
+
+there are some problems in the current version like, if the record screen
+resolution is not proper the color quality of the video is very low.

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>JScreenRecorder - User Manual</title>
+
+
+
+
+        <style type="text/css">
+            <!--
+            body { color: black; background: white }
+            h1, h2 { font-family: arial, helvetica, sans-serif }
+            h1 { color: white; background: black }
+            div.footer { font-size: 60% }
+            -->
+        </style>
+
+        <meta name="keywords" content="java, screen, recorder, capturer, video, jmf, media, framework" />
+
+
+        <meta name="description" content="JScreenRecorder is a pure java based screen recording software" />
+
+
+        <link rev="made" href="deepakpk009@yahoo.in" />
+
+
+        <meta name="keywords" content="JScreenRecorder" /></head><body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);" alink="#ff0000" link="#1f00ff" vlink="#9900dd">
+        <h1>JScreenRecorder v0.3<br />
+        </h1>
+
+        <table cellpadding="0" cellspacing="0" width="100%">
+
+            <tbody>
+                <tr>
+                    <td align="center">
+                        <div> <img src="./User_Manual_files/icon128.png" alt=" [JScreenRecorder Logo] " height="128" width="128" /> </div>
+                    </td>
+                    <td align="center" bgcolor="#dddddd" width="100%">[ <a href="#introduction" name="TOCintroduction">Introduction</a> | <a href="#downloading" name="TOCdownloading">Get the Software</a> | <a href="#screenshots" name="TOCscreenshots">Screen Shots</a> <br />
+                        | <a href="#enhancement" name="TOCenhancement">Request an Enhancement</a>
+                        | <br />
+                        | <a href="#bug" name="TOCbug">Report a Bug</a>] </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2><a href="#TOCintroduction" name="introduction">Introduction</a></h2>
+
+        <p> JScreenRecorder is a free and opensource pure java based screen
+            recording software licensed under LGPL.<br />
+        </p>
+
+        <p>The following features are available so far :</p>
+
+        <ul>
+
+            <li>Free software available under the Lesser GNU Public License</li>
+            <li>Fullscreen and selective screen area recording<br />
+            </li>
+            <li>Custom cursors<br />
+            </li>
+            <li>Chooses from a set of 128 different cursors<br />
+            </li>
+            <li>Cursor highlighter<br />
+            </li>
+            <li>Highlighter color and alpha(transparency) settings<br />
+            </li>
+            <li>Support for watermarking<br />
+            </li>
+            <li>Create custom textual watermark <br />
+            </li>
+            <li>Watermark alpha(transparency) settings<br />
+            </li>
+            <li>WYSIWYG (What You See Is What You Get) type of Watermark location
+                selector</li>
+            <li>Frame rate setting<br />
+            </li>
+            <li>Runs on all major Java supported platforms</li>
+            <li>Uses JMF (Java Media Framework), TransPanel and JTextChooser components<br />
+            </li>
+
+            <li>Encodes video in AVI format<br />
+            </li>
+        </ul>
+
+        <h2><a href="#TOCdownloading" name="downloading">Downloading</a></h2>
+
+        <p> JScreenRecorder can be found at the <a href="http://sourceforge.net/projects/jscreenrecorder/">JScreenRecorder's
+                SourceForge Page</a>.
+        </p>
+
+        <h2><a href="#TOCscreenshots" name="screenshots">Screen Shots<br />
+            </a></h2>
+
+        <p> 
+            The Main window on startup <br></br>
+            <img alt="The main window on startup" src="./User_Manual_files/initial_main_window.jpg"/><br></br>
+            The Frame Rate Selector <br></br>
+            <img alt="The Frame Rate Selector" src="./User_Manual_files/frame_rate_selector.jpg"/><br></br>
+            The Capture Area Selector <br></br>
+            <img alt="The Capture Area Selector" src="./User_Manual_files/capture_area_selector.jpg"/><br></br>
+            The Watermark Selector <br></br>
+            <img alt="The Watermark Selector" src="./User_Manual_files/watermark_selector.jpg"/><br></br>
+            The Text Watermark Image Creator <br></br>
+            <img alt="The Text Watermark Image Creator" src="./User_Manual_files/text_watermark_creator.jpg"/><br></br>
+            The Text Watermark image <br></br>
+            <img alt="The Text Watermark image" src="./User_Manual_files/text_watermark_image.jpg"/><br></br>
+            The Watermark Position Selector <br></br>
+            <img alt="The Watermark Position Selector" src="./User_Manual_files/watermark_position_selector.jpg"/><br></br>
+            The Cursor Selector <br></br>
+            <img alt="The Cursor Selector" src="./User_Manual_files/cursor_selector.jpg"/><br></br>
+            The Video Save File Selector <br></br>
+            <img alt="The Video Save File Selector" src="./User_Manual_files/save_file_selector.jpg"/><br></br>
+            The fully configured Main Window <br></br>
+            <img alt="The fully configured Main Window" src="./User_Manual_files/fully_configured_main_window.jpg"/><br></br>
+            The Main Window on finish recording <br></br>
+            <img alt="The Main Window on finish recording" src="./User_Manual_files/on_recording_finish_main_window.jpg"/><br></br>
+
+        </p>
+
+        <h2><a href="#TOCenhancement" name="enhancement">Request an Enhancement</a></h2>
+
+        <p>If you would like any new feature to be included in future versions
+            of JScreenRecorder, please send a request to <a href="mailto:deepakpk009@yahoo.in">&lt;deepakpk009@yahoo.in&gt;</a>&nbsp;
+        </p>
+
+        <h2><a href="#TOCbug" name="bug">Report a Bug</a></h2>
+
+        <p> If you think you have found a bug in JScreenRecorder, then you
+            should send as complete a report as possible to <a href="mailto:deepakpk009@yahoo.in">&lt;deepakpk009@yahoo.in&gt;</a>. </p>
+
+        <div class="footer">
+            <p>&nbsp; Go to <a href="http://www.gnu.org/home.html">JScreenRecorder's
+                    home page</a>. </p>
+            <p> Please send inquiries, questions, comments, feedback to <a href="mailto:webmasters@gnu.org"><em>deepakpk009@yahoo.in</em></a>, </p>
+            <p> JScreenRecorder is licensed under LGPL . All icons, images and logo
+                are under GPL/LGPL/Public Domain by their respective owners/designers.</p>
+        </div>
+
+
+    </body></html>

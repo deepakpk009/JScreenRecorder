@@ -1,0 +1,188 @@
+/*
+ This file is part of JScreenRecorder v0.3
+
+ JScreenRecorder is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ JScreenRecorder is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public License
+ along with JScreenRecorder.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package com.deepak.jscreenrecorder.gui;
+
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+
+/**
+ *
+ * @author deepak
+ */
+// this class impliments a pael to diaplay the cursor image
+public class CursorDisplayPanel extends javax.swing.JPanel {
+
+    // the local cursor image reference
+    private BufferedImage cursorImage = null;
+    // the highlighter enable flag
+    private boolean highlighterEnable = false;
+    // highlight color 
+    private Color highlighterColor = null;
+    // highlighter size
+    private int highlighterSize = 0;
+    // highlighter alpha (transparency)
+    private float highlighterAlpha = 0.0f;
+    // final cursor image object which is obtained after highlighter and alpha setting
+    private BufferedImage finalCursorImage = null;
+    // the final cursor image graphics refernce object
+    private Graphics2D finalCursorImageGraphics = null;
+
+    // the default constructor
+    public CursorDisplayPanel() {
+        // set the default values to the fields
+        highlighterColor = Color.yellow;
+        highlighterSize = 27;
+        highlighterEnable = false;
+        highlighterAlpha = 0.5f;
+        // initilise visual components
+        initComponents();
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        // draw the panel
+        super.paint(g);
+        // if cursor image is present then
+        if (cursorImage != null) {
+
+            // get the cursor image size
+            int cw = cursorImage.getWidth();
+            int ch = cursorImage.getHeight();
+
+            // if highlighter is enabled
+            if (highlighterEnable) {
+
+                // create finalcursor with resolution of highlighter or cursor which ever is greater
+                int fw = cw > highlighterSize ? cw : highlighterSize;
+                int fh = ch > highlighterSize ? ch : highlighterSize;
+                finalCursorImage = new BufferedImage(fw, fh, BufferedImage.TYPE_INT_ARGB_PRE);
+                // get the graphics refernce
+                finalCursorImageGraphics = finalCursorImage.createGraphics();
+                // set highlight color
+                if (highlighterColor != null) {
+                    finalCursorImageGraphics.setColor(highlighterColor);
+                }
+                // set the alpha value
+                finalCursorImageGraphics.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, highlighterAlpha));
+                // draw highlight at specified size on finalcursor
+                finalCursorImageGraphics.fillOval((fw / 2) - (highlighterSize / 2), (fh / 2) - (highlighterSize / 2), highlighterSize, highlighterSize);
+                // reset the alpha value to opaque
+                finalCursorImageGraphics.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+                // draw cursor image on finalcursor
+                finalCursorImageGraphics.drawImage(cursorImage, (fw / 2) - (cw / 2), (fh / 2) - (ch / 2), this);
+                // dispose all graphics resources
+                finalCursorImageGraphics.dispose();
+                // draw finalcursor on panel
+                g.drawImage(finalCursorImage, (this.getWidth() / 2) - (fw / 2), (this.getHeight() / 2) - (fh / 2), this);
+            } // else if highlghter is not enabled then
+            else {
+                // create finalcursor with resolution of cursor
+                finalCursorImage = new BufferedImage(cw, ch, BufferedImage.TYPE_INT_ARGB_PRE);
+                finalCursorImageGraphics = finalCursorImage.createGraphics();
+                // draw cursor image on finalcursor
+                finalCursorImageGraphics.drawImage(cursorImage, 0, 0, this);
+                // dispose all graphics resources
+                finalCursorImageGraphics.dispose();
+                // draw finalcursor on panel            
+                g.drawImage(finalCursorImage, (this.getWidth() / 2) - (cw / 2), (this.getHeight() / 2) - (ch / 2), this);
+            }
+        }
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 174, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 134, Short.MAX_VALUE)
+        );
+    }// </editor-fold>//GEN-END:initComponents
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // End of variables declaration//GEN-END:variables
+
+    // GETTER AND SETTER FOR THE FIELDS
+    public BufferedImage getFinalCursorImage() {
+        return finalCursorImage;
+    }
+
+    public BufferedImage getCursorImage() {
+        return cursorImage;
+    }
+
+    public void setCursorImage(BufferedImage cursorImage) {
+        this.cursorImage = cursorImage;
+        // on cursor image set reapint the panel
+        this.repaint();
+    }
+
+    public Color getHighlighterColor() {
+        return highlighterColor;
+    }
+
+    public void setHighlighterColor(Color highlighterColor) {
+        this.highlighterColor = highlighterColor;
+        // on highlighter color set reapint the panel
+        this.repaint();
+    }
+
+    public int getHighlighterSize() {
+        return highlighterSize;
+    }
+
+    public void setHighlighterSize(int highlighterSize) {
+        this.highlighterSize = highlighterSize;
+        // on highlighter size set repaint the panel
+        this.repaint();
+    }
+
+    public boolean isHighlighterEnable() {
+        return highlighterEnable;
+    }
+
+    public void setHighlighterEnable(boolean highlighterEnable) {
+        this.highlighterEnable = highlighterEnable;
+        // on enabling highlighter repaint the panel
+        this.repaint();
+    }
+
+    public float getHighlighterAlpha() {
+        return highlighterAlpha;
+    }
+
+    public void setHighlighterAlpha(float alpha) {
+        this.highlighterAlpha = alpha;
+        // on highlighter alpha (transparency) set repaint the panel
+        this.repaint();
+    }
+}
